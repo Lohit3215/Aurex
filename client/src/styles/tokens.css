@@ -1,0 +1,94 @@
+/* ==========================================================================
+   AUREX MEET - "Ivory Ink" design system
+   A warm paper ground, deep ink text, restrained brass accents and a single
+   terracotta action colour. Designed for long meetings: low glare, high
+   contrast, no saturated backgrounds competing with the video.
+   ========================================================================== */
+
+:root {
+  /* Paper + ink */
+  --ink-900: #17150f;
+  --ink-800: #24211a;
+  --ink-700: #3a352c;
+  --ink-600: #4f4a3f;
+  --ink-500: #6b6558;
+  --ink-400: #8b8579;
+  --ink-300: #b3ada0;
+  --ink-200: #d7d1c4;
+  --ink-100: #e8e3d8;
+
+  --paper-50: #fbf9f5;
+  --paper-100: #f7f4ee;
+  --paper-200: #f1ece2;
+  --paper-300: #e8e2d5;
+  --paper-400: #ddd5c5;
+
+  /* Accents */
+  --brass-500: #b8763a;
+  --brass-400: #c98d55;
+  --brass-100: #f3e6d6;
+  --terracotta-600: #b4552f;
+  --terracotta-500: #c9663c;
+  --terracotta-100: #f8e5dc;
+  --sage-600: #4d6b53;
+  --sage-100: #e4ede2;
+  --amber-600: #9a6b1f;
+  --amber-100: #f7ecd6;
+  --rose-600: #9c3d3d;
+  --rose-100: #f7e0e0;
+
+  /* Semantic */
+  --bg: var(--paper-100);
+  --surface: #fffdf9;
+  --surface-sunken: var(--paper-200);
+  --border: var(--ink-200);
+  --border-strong: var(--ink-300);
+  --text: var(--ink-900);
+  --text-muted: var(--ink-500);
+  --text-subtle: var(--ink-400);
+  --accent: var(--terracotta-600);
+  --accent-hover: var(--terracotta-500);
+  --focus: var(--brass-500);
+
+  /* Typography */
+  --font-sans: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --font-ui: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+
+  /* Space + shape */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 999px;
+
+  --shadow-xs: 0 1px 2px rgba(23, 21, 15, 0.06);
+  --shadow-sm: 0 2px 8px rgba(23, 21, 15, 0.07);
+  --shadow-md: 0 8px 24px rgba(23, 21, 15, 0.09);
+  --shadow-lg: 0 20px 60px rgba(23, 21, 15, 0.16);
+
+  --header-h: 60px;
+  --control-h: 72px;
+
+  --motion-fast: 120ms;
+  --motion-base: 200ms;
+  --motion-slow: 320ms;
+  --ease: cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-fast: 0ms;
+    --motion-base: 0ms;
+    --motion-slow: 0ms;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

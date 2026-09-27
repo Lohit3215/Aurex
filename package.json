@@ -1,0 +1,25 @@
+{
+  "name": "aurex-meet",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AUREX MEET - self-hostable, browser-native WebRTC meeting application with a lightweight WebSocket signaling server.",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "scripts": {
+    "setup": "npm install && npm run install:workspace",
+    "install:workspace": "npm install --prefix server && npm install --prefix client",
+    "dev": "concurrently -k -n server,client -c cyan,magenta \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "build": "npm run build --prefix client",
+    "start": "npm run start --prefix server",
+    "preview": "npm run preview --prefix client",
+    "test": "npm test --prefix server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}

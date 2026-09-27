@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AUREX MEET">
+  <rect width="64" height="64" rx="14" fill="#17150f" />
+  <path
+    d="M16 44V20h6.6l9.4 15.2L41.4 20H48v24h-6V30.6l-8.2 13h-3.6L22 30.6V44z"
+    fill="#f7f4ee"
+  />
+  <circle cx="48" cy="20" r="4" fill="#b8763a" />
+</svg>

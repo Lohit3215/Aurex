@@ -1,0 +1,180 @@
+/* ====================================================== responsive & a11y */
+
+/* --- tablet: fewer columns, tighter chrome ------------------------------- */
+@media (max-width: 1024px) {
+  .stage {
+    grid-template-columns: 1fr 132px;
+  }
+
+  .meeting {
+    --panel-w: 316px;
+  }
+
+  .tile__name {
+    max-width: 9ch;
+  }
+}
+
+/* --- mobile: single column grid, panel becomes a bottom sheet ------------ */
+@media (max-width: 760px) {
+  body {
+    font-size: 14.5px;
+  }
+
+  .stage {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
+  }
+
+  .stage__strip {
+    max-height: 84px;
+  }
+
+  .stage__strip-list {
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .stage__strip-item {
+    width: 108px;
+    flex: none;
+  }
+
+  .stage__pip {
+    bottom: 48px;
+    right: 8px;
+    width: 108px;
+  }
+
+  /* The panel never covers the control bar on small screens. */
+  .side-panel {
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-height: 62dvh;
+    border-left: 0;
+    border-top: 1px solid var(--border);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    box-shadow: 0 -12px 32px rgba(0, 0, 0, 0.3);
+    animation: slide-up var(--motion-base) var(--ease);
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(18px);
+      opacity: 0;
+    }
+  }
+
+  .meeting--panel-open .control-bar {
+    padding-bottom: 8px;
+  }
+
+  .control-bar {
+    justify-content: center;
+    gap: 8px;
+    min-height: 64px;
+  }
+
+  .control-bar__group {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .control-bar__group--center {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: center;
+    padding-bottom: 2px;
+  }
+
+  .control-bar .icon-btn {
+    width: 42px;
+    height: 42px;
+  }
+
+  .control-bar__leave {
+    width: 42px;
+    padding: 0;
+  }
+
+  .control-bar__leave svg {
+    margin: 0;
+  }
+
+  .video-grid {
+    gap: 8px;
+  }
+
+  .tile__name {
+    max-width: 8ch;
+    font-size: 11px;
+  }
+
+  .waiting__card {
+    grid-template-columns: 1fr;
+  }
+
+  .waiting__preview {
+    min-height: 200px;
+  }
+
+  .site-header {
+    padding: 12px 16px;
+  }
+
+  .site-footer {
+    font-size: 12px;
+  }
+
+  .share-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .share-card__actions {
+    align-self: stretch;
+  }
+}
+
+@media (max-width: 460px) {
+  .home__actions .btn {
+    flex: 1;
+  }
+
+  .prejoin__share-url {
+    padding-right: 0;
+  }
+
+  .prejoin__copy {
+    position: static;
+    transform: none;
+    margin-top: 8px;
+  }
+
+  .side-panel {
+    max-height: 70dvh;
+  }
+}
+
+/* --- very wide screens: cap the stage so tiles stay sane ------------------ */
+@media (min-width: 1800px) {
+  .meeting__stage-area {
+    max-width: 1760px;
+    margin: 0 auto;
+    width: 100%;
+  }
+}
+
+/* --- print: nothing useful, keep it tidy --------------------------------- */
+@media print {
+  .control-bar,
+  .side-panel,
+  .site-header,
+  .site-footer {
+    display: none !important;
+  }
+}

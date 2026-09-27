@@ -1,0 +1,22 @@
+{
+  "name": "aurex-meet-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AUREX MEET signaling + room management server (WebSocket, no media, no external services).",
+  "license": "MIT",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=18.17.0"
+  },
+  "scripts": {
+    "dev": "node --watch src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test \"test/**/*.test.js\""
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "ws": "^8.18.0"
+  }
+}
